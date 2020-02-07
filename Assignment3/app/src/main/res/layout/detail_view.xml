@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailView">
+
+    <TextView
+        android:id="@+id/nameID"
+        android:layout_width="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/nameView"
+        android:layout_width="336dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/nameID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="ASU-Poly" />
+
+
+    <TextView
+        android:id="@+id/descID"
+        android:layout_width="73dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameID"
+        android:layout_marginTop="55dp"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/description" />
+
+    <EditText
+        android:id="@+id/descView"
+        android:layout_width="327dp"
+        android:layout_height="67dp"
+        android:layout_below="@id/nameView"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@id/descID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="Home of ASU's Software Engineering Programs" />
+
+    <TextView
+        android:id="@+id/cateID"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descID"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/category" />
+
+    <EditText
+        android:id="@+id/cateView"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descView"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/cateID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="School" />
+
+    <TextView
+        android:id="@+id/titleID"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cateID"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/addresstitle" />
+
+    <EditText
+        android:id="@+id/titleView"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cateView"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@id/titleID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="ASU Software Engineering" />
+
+    <TextView
+        android:id="@+id/streetID"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleID"
+        android:layout_marginTop="69dp"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/addressstreet" />
+
+    <EditText
+        android:id="@+id/streetView"
+        android:layout_width="305dp"
+        android:layout_height="116dp"
+        android:layout_below="@id/titleView"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/streetID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="7171 E Sonoran Arroyo Mall Peralta Hall 230 Mesa AZ 85212" />
+
+    <TextView
+        android:id="@+id/elevID"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/streetView"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/elevation" />
+
+    <EditText
+        android:id="@+id/elevView"
+        android:layout_width="83dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/streetView"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/elevID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="number"
+        android:text="0.0" />
+
+    <TextView
+        android:id="@+id/latID"
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/streetView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/elevView"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/latitude" />
+
+    <EditText
+        android:id="@+id/latView"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/streetView"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@id/latID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="number"
+        android:text="0.0" />
+
+    <TextView
+        android:id="@+id/longID"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/latView"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/longitude" />
+
+    <EditText
+        android:id="@+id/longView"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/latView"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/longID"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="number"
+        android:text="0.0" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/updateBtn"
+        android:layout_below="@id/longView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:onClick="updatePlaceDescription"/>
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/distBtn"
+        android:layout_below="@id/longView"
+        android:layout_toRightOf="@id/updateBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Distance and Initial Bearing" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/removeBtn"
+        android:layout_toRightOf="@id/distBtn"
+        android:layout_below="@id/longView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Remove" />
+</RelativeLayout>
