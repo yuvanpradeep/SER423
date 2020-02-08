@@ -20,13 +20,14 @@
     <EditText
         android:id="@+id/nameView"
         android:layout_width="336dp"
+        android:hint="Enter name"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/nameID"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="ASU-Poly" />
+        android:text="" />
 
 
     <TextView
@@ -44,6 +45,7 @@
     <EditText
         android:id="@+id/descView"
         android:layout_width="327dp"
+        android:hint="Enter description"
         android:layout_height="67dp"
         android:layout_below="@id/nameView"
         android:layout_marginLeft="11dp"
@@ -51,7 +53,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Home of ASU's Software Engineering Programs" />
+        android:text="" />
 
     <TextView
         android:id="@+id/cateID"
@@ -69,6 +71,7 @@
         android:id="@+id/cateView"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
+        android:hint="Enter category"
         android:layout_below="@id/descView"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="12dp"
@@ -76,7 +79,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="School" />
+        android:text="" />
 
     <TextView
         android:id="@+id/titleID"
@@ -94,6 +97,7 @@
         android:id="@+id/titleView"
         android:layout_width="312dp"
         android:layout_height="wrap_content"
+        android:hint="Enter title"
         android:layout_below="@id/cateView"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="14dp"
@@ -101,7 +105,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="ASU Software Engineering" />
+        android:text="" />
 
     <TextView
         android:id="@+id/streetID"
@@ -119,6 +123,7 @@
         android:id="@+id/streetView"
         android:layout_width="305dp"
         android:layout_height="116dp"
+        android:hint="Enter address"
         android:layout_below="@id/titleView"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="6dp"
@@ -126,7 +131,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="7171 E Sonoran Arroyo Mall Peralta Hall 230 Mesa AZ 85212" />
+        android:text="" />
 
     <TextView
         android:id="@+id/elevID"
@@ -137,7 +142,7 @@
         android:ems="10"
         android:gravity="center"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:text="@string/elevation" />
 
     <EditText
@@ -145,12 +150,13 @@
         android:layout_width="83dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/streetView"
+        android:hint="Enter elevation"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="8dp"
         android:layout_toRightOf="@id/elevID"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:text="0.0" />
 
     <TextView
@@ -164,7 +170,7 @@
         android:ems="10"
         android:gravity="center"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:text="@string/latitude" />
 
     <EditText
@@ -172,12 +178,13 @@
         android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/streetView"
+        android:hint="Enter latitude"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="7dp"
         android:layout_toRightOf="@id/latID"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:text="0.0" />
 
     <TextView
@@ -189,20 +196,21 @@
         android:ems="10"
         android:gravity="center"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:text="@string/longitude" />
 
     <EditText
         android:id="@+id/longView"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
+        android:hint="Enter longitude"
         android:layout_below="@id/latView"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="6dp"
         android:layout_toRightOf="@id/longID"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:text="0.0" />
 
     <Button

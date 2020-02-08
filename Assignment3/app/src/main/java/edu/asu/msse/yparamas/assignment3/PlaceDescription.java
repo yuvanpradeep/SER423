@@ -58,7 +58,7 @@ public class PlaceDescription implements Serializable {
 
         }catch (Exception ex){
             android.util.Log.d(this.getClass().getSimpleName(),
-                    "error getting PlaceDescription description from json string");
+                    "Error getting place description from json string");
         }
     }
 }
