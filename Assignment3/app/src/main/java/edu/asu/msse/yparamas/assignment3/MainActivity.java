@@ -25,7 +25,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     PlaceLibrary placeLibrary = new PlaceLibrary();
     ListView listView;
+    CustomListAdapter placeNameAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +48,17 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         }
 
         String[] placeNames = placeLibrary.getNames();
-        ArrayAdapter adapter = new ArrayAdapter<>(this,
-                R.layout.place_listview, placeNames);
+
+        placeNameAdapter = new CustomListAdapter(this, placeNames);
+//        ArrayAdapter adapter = new ArrayAdapter<>(this,
+//                R.layout.place_listview, placeNames);
+//
+//        listView = findViewById(R.id.place_list);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(this);
 
         listView = findViewById(R.id.place_list);
-        listView.setAdapter(adapter);
+        listView.setAdapter(placeNameAdapter);
         listView.setOnItemClickListener(this);
 
     }
@@ -99,4 +105,11 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.println();
+    }
+
 }
