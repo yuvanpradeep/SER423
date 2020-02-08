@@ -74,16 +74,13 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         return true;
     }
 
-    public void addNewPlace(MenuItem item) {
-        if(item.getItemId() == R.id.addPlace) {
-            Log.d("add place selected", "");
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.addPlace) {
+            Intent dialog = new Intent(this, PlaceNameDialog.class);
+            startActivity(dialog);
+
         }
+        return super.onOptionsItemSelected(item);
     }
-
-//    public void addNewPlace(View view) {
-//        //Intent newIntent = new Intent(MainActivity.this, PlaceName.class);
-//        //startActivity(newIntent);
-//    }
-
-
 }
