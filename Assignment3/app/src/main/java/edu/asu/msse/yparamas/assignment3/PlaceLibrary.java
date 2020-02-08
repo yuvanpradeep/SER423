@@ -1,6 +1,26 @@
+/* PlaceLibrary.java
+ * Copyright (c) 2020 Yuvan Pradeep. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * The instructor and the University have rights to build and evaluate
+ * the software package for the purpose of determining my grade and program assessment
+ *
+ * Purpose: PlaceLibrary is the collection class for place and helps to deserialize the json
+ *
+ * Ser423 Mobile Applications
+ * @author Yuvan Pradeep Paramasivam Murugesan
+ * mailto: yparamas@asu.edu
+ * @version February 7, 2020
+ */
+
 package edu.asu.msse.yparamas.assignment3;
 
 import android.app.Activity;
+import android.util.Log;
+
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -58,19 +78,20 @@ public class PlaceLibrary implements Serializable {
         return result;
     }
 
-    public boolean addPlace(PlaceDescription placeDescription) {
-        boolean result = true;
-
+    public void addPlace(PlaceDescription placeDescription) {
         try {
             places.put(placeDescription.name, placeDescription);
         } catch (Exception ex) {
-            result = false;
+            Log.d(this.getClass().getSimpleName(), "Unable to add new place: " + ex.getMessage());
         }
-        return result;
     }
 
-    public boolean removePlace(String placeName) {
-        return (places.remove(placeName) == null) ? false : true;
+    public void removePlace(String placeName) {
+        try {
+            places.remove(placeName);
+        } catch(Exception ex) {
+            Log.d(this.getClass().getSimpleName(), "Unable to remove place: " + ex.getMessage());
+        }
     }
 
     public String[] getNames() {

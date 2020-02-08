@@ -1,3 +1,20 @@
+/* MainActivity.java
+ * Copyright (c) 2020 Yuvan Pradeep. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * The instructor and the University have rights to build and evaluate
+ * the software package for the purpose of determining my grade and program assessment
+ *
+ * Purpose: Main activity which loads the list of places from json and displays the detail.
+ *
+ * Ser423 Mobile Applications
+ * @author Yuvan Pradeep Paramasivam Murugesan
+ * mailto: yparamas@asu.edu
+ * @version February 7, 2020
+ */
 package edu.asu.msse.yparamas.assignment3;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -78,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.addPlace) {
             Intent dialog = new Intent(this, PlaceNameDialog.class);
+            dialog.putExtra("placeLibrary", placeLibrary);
             startActivity(dialog);
 
         }

@@ -1,3 +1,21 @@
+/* DetailView.java
+ * Copyright (c) 2020 Yuvan Pradeep. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * The instructor and the University have rights to build and evaluate
+ * the software package for the purpose of determining my grade and program assessment
+ *
+ * Purpose: DetailView helps to display the place description and also perform update operation
+ *
+ * Ser423 Mobile Applications
+ * @author Yuvan Pradeep Paramasivam Murugesan
+ * mailto: yparamas@asu.edu
+ * @version February 7, 2020
+ */
+
 package edu.asu.msse.yparamas.assignment3;
 
 import android.content.Intent;
