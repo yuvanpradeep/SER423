@@ -223,7 +223,7 @@
         android:onClick="updatePlaceDescription"/>
     <Button
         android:layout_marginTop="20dp"
-        android:id="@+id/distBtn"
+        android:id="@+id/circleDistBtn"
         android:layout_below="@id/longView"
         android:layout_toRightOf="@id/updateBtn"
         android:layout_width="200dp"
@@ -233,7 +233,7 @@
     <Button
         android:layout_marginTop="20dp"
         android:id="@+id/removeBtn"
-        android:layout_toRightOf="@id/distBtn"
+        android:layout_toRightOf="@id/circleDistBtn"
         android:layout_below="@id/longView"
         android:layout_width="100dp"
         android:layout_height="wrap_content"

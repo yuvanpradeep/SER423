@@ -29,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DetailView extends AppCompatActivity {
 
     Button removeBtn;
+    Button circleDistBtn;
 
     private EditText nameEdit;
     private EditText descriptionEdit;
@@ -48,6 +49,8 @@ public class DetailView extends AppCompatActivity {
         setContentView(R.layout.detail_view);
 
         removeBtn = findViewById(R.id.removeBtn);
+        circleDistBtn = findViewById(R.id.circleDistBtn);
+
         nameEdit = findViewById(R.id.nameView);
         descriptionEdit = findViewById(R.id.descView);
         categoryEdit = findViewById(R.id.cateView);
@@ -79,6 +82,17 @@ public class DetailView extends AppCompatActivity {
             }
         });
 
+        circleDistBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent distanceView = new Intent(DetailView.this, CircleDistanceBearing.class);
+                distanceView.putExtra("placeLibrary", placeLibrary);
+                distanceView.putExtra("name", String.valueOf(nameEdit.getText()));
+                distanceView.putExtra("latitude", getIntent().getSerializableExtra("latitude"));
+                distanceView.putExtra("longitude", getIntent().getSerializableExtra("longitude"));
+                startActivity(distanceView);
+            }
+        });
     }
 
     public void updatePlaceDescription(View view) {
