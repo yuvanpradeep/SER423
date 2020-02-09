@@ -14,31 +14,32 @@
         android:layout_height="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.33" />
 
     <TextView
         android:id="@+id/distanceTxt"
-        android:layout_width="126dp"
-        android:layout_height="29dp"
+        android:layout_width="188dp"
+        android:layout_height="27dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerPlace"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.224" />
 
     <TextView
         android:id="@+id/bearingTxt"
-        android:layout_width="122dp"
-        android:layout_height="26dp"
+        android:layout_width="188dp"
+        android:layout_height="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/distanceTxt"
-        app:layout_constraintVertical_bias="0.241" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <TextView
         android:id="@+id/fromPlacID"
@@ -54,14 +55,14 @@
 
     <TextView
         android:id="@+id/fromPlacTxt"
-        android:layout_width="90dp"
-        android:layout_height="21dp"
+        android:layout_width="150dp"
+        android:layout_height="37dp"
         app:layout_constraintBottom_toTopOf="@+id/spinnerPlace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toEndOf="@+id/fromPlacID"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <TextView
         android:id="@+id/distID"
@@ -70,7 +71,7 @@
         android:text="Distance:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerPlace"
         app:layout_constraintVertical_bias="0.22" />
@@ -82,9 +83,33 @@
         android:text="Bearing:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/distID"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintVertical_bias="0.254" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Place:"
+        app:layout_constraintBottom_toTopOf="@+id/distID"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerPlace"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fromPlacID"
+        app:layout_constraintVertical_bias="0.497" />
+
+    <Button
+        android:id="@+id/goToPlaceLst"
+        android:layout_width="157dp"
+        android:layout_height="42dp"
+        android:text="Go to place list"
+        app:layout_constraintBottom_toTopOf="@+id/fromPlacTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

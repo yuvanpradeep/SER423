@@ -20,6 +20,7 @@ package edu.asu.msse.yparamas.assignment3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -47,24 +48,31 @@ public class PlaceNameDialog extends AppCompatActivity {
 
         createBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent detailView = new Intent(PlaceNameDialog.this, DetailView.class);
 
-                PlaceDescription placeDescription = new PlaceDescription(String.valueOf(placeNameText.getText()),
-                        "", "", "", "",
-                        0.0, 0.0, 0.0);
+                if(!String.valueOf(placeNameText.getText()).trim().equals("")) {
+                    Intent detailView = new Intent(PlaceNameDialog.this, DetailView.class);
 
-                placeLibrary.addPlace(placeDescription);
+                    PlaceDescription placeDescription = new PlaceDescription(String.valueOf(placeNameText.getText()).trim(),
+                            "", "", "", "",
+                            0.0, 0.0, 0.0);
 
-                detailView.putExtra("name", String.valueOf(placeNameText.getText()));
-                detailView.putExtra("placeLibrary", placeLibrary);
-                detailView.putExtra("description", "");
-                detailView.putExtra("category","");
-                detailView.putExtra("addressTitle", "");
-                detailView.putExtra("addressStreet", "");
-                detailView.putExtra("elevation", "0.0");
-                detailView.putExtra("latitude", "0.0");
-                detailView.putExtra("longitude", "0.0");
-                startActivity(detailView);
+                    placeLibrary.addPlace(placeDescription);
+
+                    detailView.putExtra("name", String.valueOf(placeNameText.getText()).trim());
+                    detailView.putExtra("placeLibrary", placeLibrary);
+                    detailView.putExtra("description", "");
+                    detailView.putExtra("category","");
+                    detailView.putExtra("addressTitle", "");
+                    detailView.putExtra("addressStreet", "");
+                    detailView.putExtra("elevation", "0.0");
+                    detailView.putExtra("latitude", "0.0");
+                    detailView.putExtra("longitude", "0.0");
+                    startActivity(detailView);
+                } else {
+                    Log.d(this.getClass().getSimpleName(),
+                            "Please enter the valid place name to add");
+                }
+
             }
         });
 

@@ -37,13 +37,13 @@ public class PlaceLibrary implements Serializable {
     public PlaceLibrary() {}
 
     public PlaceLibrary(Activity parent) {
-        android.util.Log.d(this.getClass().getSimpleName(),
+        Log.d(this.getClass().getSimpleName(),
                 "Creating a new place collection");
         places = new Hashtable<>();
         try {
             this.loadFromJsonFile(parent);
         } catch (Exception ex) {
-            android.util.Log.d(this.getClass().getSimpleName(),
+            Log.d(this.getClass().getSimpleName(),
                     "error Resetting from places json file" + ex.getMessage());
         }
     }
@@ -71,8 +71,8 @@ public class PlaceLibrary implements Serializable {
                 }
             }
         } catch (Exception ex) {
-            android.util.Log.d(this.getClass().getSimpleName(),
-                    "Exception reading json file: " + ex.getMessage());
+            Log.d(this.getClass().getSimpleName(),
+                    "Exception reading the json file: " + ex.getMessage());
             result = false;
         }
         return result;
@@ -82,7 +82,7 @@ public class PlaceLibrary implements Serializable {
         try {
             places.put(placeDescription.name, placeDescription);
         } catch (Exception ex) {
-            Log.d(this.getClass().getSimpleName(), "Unable to add new place: " + ex.getMessage());
+            Log.d(this.getClass().getSimpleName(), "Unable to add a new place: " + ex.getMessage());
         }
     }
 
@@ -90,7 +90,7 @@ public class PlaceLibrary implements Serializable {
         try {
             places.remove(placeName);
         } catch(Exception ex) {
-            Log.d(this.getClass().getSimpleName(), "Unable to remove place: " + ex.getMessage());
+            Log.d(this.getClass().getSimpleName(), "Unable to remove a place: " + ex.getMessage());
         }
     }
 

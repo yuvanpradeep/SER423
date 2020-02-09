@@ -75,7 +75,7 @@ public class DetailView extends AppCompatActivity {
 
         removeBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                placeLibrary.removePlace(String.valueOf(nameEdit.getText()));
+                placeLibrary.removePlace(String.valueOf(nameEdit.getText()).trim());
                 Intent listView = new Intent(DetailView.this, MainActivity.class);
                 listView.putExtra("placeLibrary", placeLibrary);
                 startActivity(listView);
@@ -87,7 +87,7 @@ public class DetailView extends AppCompatActivity {
             public void onClick(View v) {
                 Intent distanceView = new Intent(DetailView.this, CircleDistanceBearing.class);
                 distanceView.putExtra("placeLibrary", placeLibrary);
-                distanceView.putExtra("name", String.valueOf(nameEdit.getText()));
+                distanceView.putExtra("name", String.valueOf(nameEdit.getText()).trim());
                 distanceView.putExtra("latitude", getIntent().getSerializableExtra("latitude"));
                 distanceView.putExtra("longitude", getIntent().getSerializableExtra("longitude"));
                 startActivity(distanceView);
@@ -96,14 +96,14 @@ public class DetailView extends AppCompatActivity {
     }
 
     public void updatePlaceDescription(View view) {
-        String name = String.valueOf(nameEdit.getText());
-        String description = String.valueOf(descriptionEdit.getText());
-        String category = String.valueOf(categoryEdit.getText());
-        String addressTitle = String.valueOf(addressTitleEdit.getText());
-        String addressStreet = String.valueOf(addressStreetEdit.getText());
-        Double elevation =  Double.valueOf(String.valueOf(elevationEdit.getText()));
-        Double latitude = Double.valueOf(String.valueOf(latitudeEdit.getText()));
-        Double longitude = Double.valueOf(String.valueOf(longitudeEdit.getText()));
+        String name = String.valueOf(nameEdit.getText()).trim();
+        String description = String.valueOf(descriptionEdit.getText()).trim();
+        String category = String.valueOf(categoryEdit.getText()).trim();
+        String addressTitle = String.valueOf(addressTitleEdit.getText()).trim();
+        String addressStreet = String.valueOf(addressStreetEdit.getText()).trim();
+        Double elevation =  Double.valueOf(String.valueOf(elevationEdit.getText()).trim());
+        Double latitude = Double.valueOf(String.valueOf(latitudeEdit.getText()).trim());
+        Double longitude = Double.valueOf(String.valueOf(longitudeEdit.getText()).trim());
 
         PlaceDescription placeDescription = new PlaceDescription(name, description, category,
                 addressTitle, addressStreet, elevation, latitude, longitude);
@@ -114,5 +114,12 @@ public class DetailView extends AppCompatActivity {
         listView.putExtra("placeLibrary", placeLibrary);
         startActivity(listView);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent listView = new Intent(DetailView.this, MainActivity.class);
+        listView.putExtra("placeLibrary", placeLibrary);
+        startActivity(listView);
     }
 }

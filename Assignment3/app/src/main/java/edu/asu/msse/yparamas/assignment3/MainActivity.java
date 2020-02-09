@@ -50,23 +50,15 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         String[] placeNames = placeLibrary.getNames();
 
         placeNameAdapter = new CustomListAdapter(this, placeNames);
-//        ArrayAdapter adapter = new ArrayAdapter<>(this,
-//                R.layout.place_listview, placeNames);
-//
-//        listView = findViewById(R.id.place_list);
-//        listView.setAdapter(adapter);
-//        listView.setOnItemClickListener(this);
-
         listView = findViewById(R.id.place_list);
         listView.setAdapter(placeNameAdapter);
         listView.setOnItemClickListener(this);
-
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TextView textView = view.findViewById(R.id.place_name);
-        String text = textView.getText().toString();
+        String text = textView.getText().toString().trim();
 
         PlaceDescription placeDescription = placeLibrary.get(text);
 
@@ -105,7 +97,4 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }
