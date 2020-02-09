@@ -20,12 +20,17 @@ package edu.asu.msse.yparamas.assignment3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+/**
+ * DetailView class to display the description of the selected place
+ */
 public class DetailView extends AppCompatActivity {
 
     Button removeBtn;
@@ -96,24 +101,28 @@ public class DetailView extends AppCompatActivity {
     }
 
     public void updatePlaceDescription(View view) {
-        String name = String.valueOf(nameEdit.getText()).trim();
-        String description = String.valueOf(descriptionEdit.getText()).trim();
-        String category = String.valueOf(categoryEdit.getText()).trim();
-        String addressTitle = String.valueOf(addressTitleEdit.getText()).trim();
-        String addressStreet = String.valueOf(addressStreetEdit.getText()).trim();
-        Double elevation =  Double.valueOf(String.valueOf(elevationEdit.getText()).trim());
-        Double latitude = Double.valueOf(String.valueOf(latitudeEdit.getText()).trim());
-        Double longitude = Double.valueOf(String.valueOf(longitudeEdit.getText()).trim());
+        try{
+            String name = String.valueOf(nameEdit.getText()).trim();
+            String description = String.valueOf(descriptionEdit.getText()).trim();
+            String category = String.valueOf(categoryEdit.getText()).trim();
+            String addressTitle = String.valueOf(addressTitleEdit.getText()).trim();
+            String addressStreet = String.valueOf(addressStreetEdit.getText()).trim();
+            Double elevation =  Double.valueOf(String.valueOf(elevationEdit.getText()).trim());
+            Double latitude = Double.valueOf(String.valueOf(latitudeEdit.getText()).trim());
+            Double longitude = Double.valueOf(String.valueOf(longitudeEdit.getText()).trim());
 
-        PlaceDescription placeDescription = new PlaceDescription(name, description, category,
-                addressTitle, addressStreet, elevation, latitude, longitude);
+            PlaceDescription placeDescription = new PlaceDescription(name, description, category,
+                    addressTitle, addressStreet, elevation, latitude, longitude);
 
-        placeLibrary.places.put(name, placeDescription);
+            placeLibrary.places.put(name, placeDescription);
 
-        Intent listView = new Intent(DetailView.this, MainActivity.class);
-        listView.putExtra("placeLibrary", placeLibrary);
-        startActivity(listView);
-
+            Intent listView = new Intent(DetailView.this, MainActivity.class);
+            listView.putExtra("placeLibrary", placeLibrary);
+            startActivity(listView);
+        } catch(Exception ex) {
+            Log.d(this.getClass().getSimpleName(),
+                    "Unable to update the place description" + ex.getMessage());
+        }
     }
 
     @Override

@@ -29,6 +29,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
+/**
+ * MainActivity class is used to display the list of place names which got extracted from json file
+ */
 public class MainActivity extends AppCompatActivity implements ListView.OnItemClickListener{
 
     PlaceLibrary placeLibrary = new PlaceLibrary();

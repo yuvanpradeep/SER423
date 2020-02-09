@@ -28,6 +28,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * PlaceNameDialog class helps the user to add new place to the library
+ */
 public class PlaceNameDialog extends AppCompatActivity {
 
     Button createBtn;
@@ -42,13 +45,10 @@ public class PlaceNameDialog extends AppCompatActivity {
 
         createBtn = findViewById(R.id.createBtn);
         placeNameText = findViewById(R.id.placeNameText);
-
-
         placeLibrary = (PlaceLibrary) getIntent().getSerializableExtra("placeLibrary");
 
         createBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 if(!String.valueOf(placeNameText.getText()).trim().equals("")) {
                     Intent detailView = new Intent(PlaceNameDialog.this, DetailView.class);
 
@@ -72,9 +72,7 @@ public class PlaceNameDialog extends AppCompatActivity {
                     Log.d(this.getClass().getSimpleName(),
                             "Please enter the valid place name to add");
                 }
-
             }
         });
-
     }
 }

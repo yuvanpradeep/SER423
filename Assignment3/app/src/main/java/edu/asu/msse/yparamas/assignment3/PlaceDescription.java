@@ -18,9 +18,14 @@
 
 package edu.asu.msse.yparamas.assignment3;
 
+import android.util.Log;
+
 import org.json.JSONObject;
 import java.io.Serializable;
 
+/**
+ * PlaceDescription class is the model for describing the place attributes and properties
+ */
 public class PlaceDescription implements Serializable {
     public String name;
     public String description;
@@ -57,8 +62,8 @@ public class PlaceDescription implements Serializable {
             longitude = jobj.getDouble("longitude");
 
         }catch (Exception ex){
-            android.util.Log.d(this.getClass().getSimpleName(),
-                    "Error getting place description from json string");
+            Log.d(this.getClass().getSimpleName(),
+                    "Error getting place description from json string"+ ex.getMessage());
         }
     }
 }

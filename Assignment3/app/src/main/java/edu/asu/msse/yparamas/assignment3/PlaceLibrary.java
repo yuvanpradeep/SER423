@@ -8,7 +8,7 @@
  * The instructor and the University have rights to build and evaluate
  * the software package for the purpose of determining my grade and program assessment
  *
- * Purpose: PlaceLibrary is the collection class for place and helps to deserialize the json
+ * Purpose: PlaceLibrary is the collection class for place and helps to deserialize the json file data
  *
  * Ser423 Mobile Applications
  * @author Yuvan Pradeep Paramasivam Murugesan
@@ -31,6 +31,9 @@ import java.io.Serializable;
 import java.util.Hashtable;
 import java.util.Iterator;
 
+/**
+ * PlaceLibrary class is used as collection of places and perform operations over it
+ */
 public class PlaceLibrary implements Serializable {
     public Hashtable<String, PlaceDescription> places;
 
@@ -44,7 +47,7 @@ public class PlaceLibrary implements Serializable {
             this.loadFromJsonFile(parent);
         } catch (Exception ex) {
             Log.d(this.getClass().getSimpleName(),
-                    "error Resetting from places json file" + ex.getMessage());
+                    "error loading from places json file" + ex.getMessage());
         }
     }
 

@@ -29,6 +29,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * CircleDistanceBearing class to calculate the great circle distance and initial bearing of the two
+ * selected places
+ */
 public class CircleDistanceBearing extends AppCompatActivity  implements  AdapterView.OnItemSelectedListener{
 
     TextView distanceTxt;
@@ -64,6 +68,7 @@ public class CircleDistanceBearing extends AppCompatActivity  implements  Adapte
         fromLongitude = (Double) getIntent().getSerializableExtra("longitude");
 
         goToPlaceLst = findViewById(R.id.goToPlaceLst);
+        // Redirection to main view
         goToPlaceLst.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent listView = new Intent(CircleDistanceBearing.this, MainActivity.class);
