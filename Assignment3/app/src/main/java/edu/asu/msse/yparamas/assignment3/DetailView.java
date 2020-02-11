@@ -107,9 +107,12 @@ public class DetailView extends AppCompatActivity {
             String category = String.valueOf(categoryEdit.getText()).trim();
             String addressTitle = String.valueOf(addressTitleEdit.getText()).trim();
             String addressStreet = String.valueOf(addressStreetEdit.getText()).trim();
-            Double elevation =  Double.valueOf(String.valueOf(elevationEdit.getText()).trim());
-            Double latitude = Double.valueOf(String.valueOf(latitudeEdit.getText()).trim());
-            Double longitude = Double.valueOf(String.valueOf(longitudeEdit.getText()).trim());
+            String elev = String.valueOf(elevationEdit.getText()).trim();
+            Double elevation =  Double.valueOf(elev.equals("") ? "0.0" : elev);
+            String lat = String.valueOf(latitudeEdit.getText()).trim();
+            Double latitude = Double.valueOf(lat.equals("") ? "0.0" : lat);
+            String lon = String.valueOf(longitudeEdit.getText()).trim();
+            Double longitude = Double.valueOf(lon.equals("") ? "0.0" : lon);
 
             PlaceDescription placeDescription = new PlaceDescription(name, description, category,
                     addressTitle, addressStreet, elevation, latitude, longitude);
