@@ -107,7 +107,7 @@ public class CircleDistanceBearing extends AppCompatActivity  implements  Adapte
                 * Math.pow(Math.sin(distanlon / 2),2);
 
         double calc = 2 * Math.asin(Math.sqrt(a));
-        double earthRad = 3956.0;
+        double earthRad = 3956.0; // 3956.0 for miles and 6371.0 for kilometres
 
         return(calc * earthRad);
     }
