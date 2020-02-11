@@ -48,21 +48,21 @@
         android:text="From Place:"
         app:layout_constraintBottom_toTopOf="@+id/spinnerPlace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.533" />
 
     <TextView
         android:id="@+id/fromPlacTxt"
-        android:layout_width="150dp"
-        android:layout_height="37dp"
+        android:layout_width="188dp"
+        android:layout_height="42dp"
         app:layout_constraintBottom_toTopOf="@+id/spinnerPlace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toEndOf="@+id/fromPlacID"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintVertical_bias="0.598" />
 
     <TextView
         android:id="@+id/distID"

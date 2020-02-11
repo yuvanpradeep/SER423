@@ -64,9 +64,9 @@ public class PlaceNameDialog extends AppCompatActivity {
                     detailView.putExtra("category","");
                     detailView.putExtra("addressTitle", "");
                     detailView.putExtra("addressStreet", "");
-                    detailView.putExtra("elevation", "0.0");
-                    detailView.putExtra("latitude", "0.0");
-                    detailView.putExtra("longitude", "0.0");
+                    detailView.putExtra("elevation", 0.0);
+                    detailView.putExtra("latitude", 0.0);
+                    detailView.putExtra("longitude", 0.0);
                     startActivity(detailView);
                 } else {
                     Log.d(this.getClass().getSimpleName(),

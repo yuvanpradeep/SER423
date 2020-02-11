@@ -156,7 +156,7 @@
         android:layout_toRightOf="@id/elevID"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:text="0.0" />
 
     <TextView
@@ -184,7 +184,7 @@
         android:layout_toRightOf="@id/latID"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:text="0.0" />
 
     <TextView
@@ -210,7 +210,7 @@
         android:layout_toRightOf="@id/longID"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:text="0.0" />
 
     <Button
