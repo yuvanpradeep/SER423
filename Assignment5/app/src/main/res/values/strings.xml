@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Assignment5</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="addresstitle">Address Title</string>
+    <string name="addressstreet">Address Street</string>
+    <string name="elevation">Elevation</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="title_activity_menu">menu</string>
+    <string name="defaultURL">http://10.0.2.2:8080</string>
+</resources>
