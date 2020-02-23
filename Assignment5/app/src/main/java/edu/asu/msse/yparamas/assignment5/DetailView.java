@@ -89,7 +89,7 @@ public class DetailView extends AppCompatActivity {
     public void loadPlaceDetails(String placeName, String methodName){
         try{
             MethodDetail methodDetail = new MethodDetail(this, getString(R.string.defaultURL),methodName,
-                    new String[]{placeName});
+                    new String[]{placeName}, "");
             AsyncConnection asyncConnection = (AsyncConnection) new AsyncConnection().execute(methodDetail);
         } catch (Exception ex){
             android.util.Log.w(this.getClass().getSimpleName(),"Exception: "+
@@ -112,6 +112,10 @@ public class DetailView extends AppCompatActivity {
 
     }
 
+    /**
+     * Function helps to perform update operation on the place description
+     * @param view
+     */
     public void updatePlaceDescription(View view) {
         PlaceDescription placeDescription = new PlaceDescription(String.valueOf(nameEdit.getText()),
                 String.valueOf(descriptionEdit.getText()), String.valueOf(categoryEdit.getText()),
@@ -125,10 +129,14 @@ public class DetailView extends AppCompatActivity {
         addPlace(placeDescription);
     }
 
+    /**
+     * Function to add new place to the server
+     * @param placeDescription
+     */
     public void addPlace(PlaceDescription placeDescription) {
         try{
             MethodDetail methodDetail = new MethodDetail(this, getString(R.string.defaultURL),"add",
-                    new Object[]{placeDescription.toJson()});
+                    new Object[]{placeDescription.toJson()}, "");
             AsyncConnection asyncConnection = (AsyncConnection) new AsyncConnection().execute(methodDetail);
         } catch (Exception ex){
             android.util.Log.w(this.getClass().getSimpleName(),"Exception: "+

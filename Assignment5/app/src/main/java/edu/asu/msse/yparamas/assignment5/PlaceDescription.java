@@ -101,5 +101,4 @@ public class PlaceDescription implements Serializable {
         }
         return jo;
     }
-
 }

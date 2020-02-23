@@ -57,7 +57,8 @@ public class AsyncConnection extends AsyncTask<MethodDetail, Integer, MethodDeta
 
     @Override
     protected void onPostExecute(MethodDetail result){
-        android.util.Log.d(this.getClass().getSimpleName(),"result: "+ result);
+        android.util.Log.d(this.getClass().getSimpleName(),"in onPreExecute on "+
+                (Looper.myLooper() == Looper.getMainLooper()?"Main thread":"Async Thread"));
         try {
             if (result.method.equals("getNames")) {
                 JSONObject jsonObject = new JSONObject(result.resultAsJson);
@@ -90,7 +91,11 @@ public class AsyncConnection extends AsyncTask<MethodDetail, Integer, MethodDeta
                 PlaceDescription placeDescription = new PlaceDescription(jsonObject.getJSONObject("result"));
                 if(result.activity.getComponentName().getClassName().contains("CircleDistanceBearing")) {
                     CircleDistanceBearing cdb = (CircleDistanceBearing) result.activity;
-                    cdb.calculate(placeDescription);
+                    if(result.from.equals("toPlace")) {
+                        cdb.calculate(placeDescription);
+                    } else {
+                        cdb.setFromAttributes(placeDescription);
+                    }
                 } else {
                     DetailView detailView = (DetailView) result.activity;
                     detailView.setValues(placeDescription);

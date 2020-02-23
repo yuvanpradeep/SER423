@@ -20,6 +20,9 @@ package edu.asu.msse.yparamas.assignment5;
 
 import android.app.Activity;
 
+/**
+ * Method detail class provides the structure of our method call to the server
+ */
 public class MethodDetail {
 
     public String method;
@@ -27,12 +30,14 @@ public class MethodDetail {
     public Activity activity;
     public String url;
     public String resultAsJson;
+    public String from;
 
-    MethodDetail(Activity parent, String url, String method, Object[] params){
+    MethodDetail(Activity parent, String url, String method, Object[] params, String from){
         this.method = method;
         this.activity = parent;
         this.url = url;
         this.params = params;
         this.resultAsJson = "{}";
+        this.from = from;
     }
 }

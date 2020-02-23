@@ -28,6 +28,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONObject;
 
+/**
+ * Add place class helps the user to add new place to the server
+ */
 public class AddPlace extends AppCompatActivity {
 
     private EditText nameEdit;
@@ -77,10 +80,14 @@ public class AddPlace extends AppCompatActivity {
 
     }
 
+    /**
+     * Function to add new place to the server
+     * @param newPlace
+     */
     public void addPlaceDetails(JSONObject newPlace) {
         try{
             MethodDetail methodDetail = new MethodDetail(this, getString(R.string.defaultURL),"add",
-                    new Object[]{newPlace});
+                    new Object[]{newPlace}, "");
             AsyncConnection asyncConnection = (AsyncConnection) new AsyncConnection().execute(methodDetail);
         } catch (Exception ex){
             android.util.Log.w(this.getClass().getSimpleName(),"Exception: "+

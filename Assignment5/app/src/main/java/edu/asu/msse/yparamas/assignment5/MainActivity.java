@@ -49,11 +49,13 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         getPlaceNames();
     }
 
-
+    /**
+     * Function get place name list
+     */
     public void getPlaceNames() {
         try{
             MethodDetail methodDetail = new MethodDetail(this, getString(R.string.defaultURL),"getNames",
-                    new Object[]{});
+                    new Object[]{}, "");
             AsyncConnection asyncConnection = (AsyncConnection) new AsyncConnection().execute(methodDetail);
         } catch (Exception ex){
             android.util.Log.w(this.getClass().getSimpleName(),"Exception creating adapter: "+

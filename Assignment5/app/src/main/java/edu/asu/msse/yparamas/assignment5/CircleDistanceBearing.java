@@ -51,9 +51,7 @@ public class CircleDistanceBearing extends AppCompatActivity  implements  Adapte
         String fromPlaceName = String.valueOf(getIntent().getSerializableExtra("name"));
         fromPlacTxt.setText(fromPlaceName);
 
-
-        fromLatitude =  Double.valueOf(String.valueOf(getIntent().getSerializableExtra("latitude")));
-        fromLongitude =  Double.valueOf(String.valueOf(getIntent().getSerializableExtra("longitude")));
+        getPlaceDetails(fromPlaceName, "fromPlace");
         getPlaceNames();
 
         goToPlaceLst = findViewById(R.id.goToPlaceLst);
@@ -68,10 +66,18 @@ public class CircleDistanceBearing extends AppCompatActivity  implements  Adapte
 
     }
 
+    public void setFromAttributes(PlaceDescription placeDescription) {
+        fromLatitude =  placeDescription.latitude;
+        fromLongitude =  placeDescription.longitude;
+    }
+
+    /**
+     * Function to get place name list
+     */
     public void getPlaceNames() {
         try{
             MethodDetail methodDetail = new MethodDetail(this, getString(R.string.defaultURL),"getNames",
-                    new Object[]{});
+                    new Object[]{}, "");
             AsyncConnection asyncConnection = (AsyncConnection) new AsyncConnection().execute(methodDetail);
         } catch (Exception ex){
             android.util.Log.w(this.getClass().getSimpleName(),"Exception creating adapter: "+
@@ -83,7 +89,7 @@ public class CircleDistanceBearing extends AppCompatActivity  implements  Adapte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         distanceTxt = findViewById(R.id.distanceTxt);
         String selectedPlace = spinnerPlace.getSelectedItem().toString();
-        getPlaceDetails(selectedPlace);
+        getPlaceDetails(selectedPlace, "toPlace");
     }
 
     public void calculate(PlaceDescription toPlace) {
@@ -95,10 +101,14 @@ public class CircleDistanceBearing extends AppCompatActivity  implements  Adapte
                 fromLongitude, toPlace.longitude)));
     }
 
-    public void getPlaceDetails(String selectedPlace) {
+    /**
+     * Function to get all detail about a place
+     * @param selectedPlace
+     */
+    public void getPlaceDetails(String selectedPlace, String fromFunction) {
         try{
             MethodDetail methodDetail = new MethodDetail(this, getString(R.string.defaultURL),"get",
-                    new String[]{selectedPlace});
+                    new String[]{selectedPlace}, fromFunction);
             AsyncConnection asyncConnection = (AsyncConnection) new AsyncConnection().execute(methodDetail);
         } catch (Exception ex){
             android.util.Log.w(this.getClass().getSimpleName(),"Exception creating adapter: "+
